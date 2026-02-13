@@ -101,8 +101,172 @@ address{
   transform: translateY(-2px) scale(1.05); /*Efeito de elevação*/
 }
 
+/*Banner Principal(Main) */
+.banner{
+  background:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+  url("../assets/imagem-fundo-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display:flex;
+  align-items: center;
+  text-align:center;
+  padding-top:60px;
+}
+
+.conteudo-banner h1{
+font-size:5rem;
+margin-bottom: 1rem;
+}
+
+.linha-destaque{
+  width:400px;
+  height: 2px;
+  background-color: var(--cor-destaque);
+  margin: 1rem auto;
+}
+
+.subtitulo{
+  font-size: 1.8rem;
+  color:var(--texto-cinza);
+  margin-bottom: 2rem;
+}
+
+.mouse {
+  width:60px;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* Seção Sobre */
+.sobre{
+  background-color: #181012;
+  padding:4rem 0; 
+}
+
+.titulo-secao{
+  color: var(--cor-primaria);
+  font-size: 3rem;
+  margin-bottom:2rem;
+  text-align:center;
+}
+
+/* Container para organizar imagem e texto lado a lado */
+
+.conteudo-sobre{
+  display:flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imagem-sobre{
+  width:45%;
+  border-radius: 10px;
+  min-width: 300px;
+  flex:1;
+}
+
+.texto-sobre{
+  width: 50%;
+  min-width: 300px;
+  flex:1;
+}
+
+.destaque{
+  color:var(--cor-destaque);
+  font-weight:700;
+  font-size: 1.5rem;
+  /*Transforma o texto em maiúsculas*/
+  /* text-transform: uppercase;  */
+}
+
+.texto-sobre h3{
+  font-size:2.5rem;
+  margin:1rem 0;
+}
+
+.texto-sobre p {
+  color:var(--texto-cinza);
+  font-size: 1.2rem;
+}
+
+/*  Cards (Estilização) */
+.info{
+  padding:4rem;
+  text-align:center;
+}
+.cards-info{
+  list-style: none;/*Remove os marcadores (Bolinhas)*/
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  gap: 2rem;
+  flex-wrap:wrap; /*Permite o texto quebrar p/ linha abaixo*/
+}
+
+.card{
+  background-color: #241a1c;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.card h3{
+  color:var(--cor-destaque);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card p{
+  background-color: var(--fundo-escura);
+  padding:1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Seção (Endereço) */
+.endereco{
+  padding:4rem 0;
+}
+
+.conteudo-endereco{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap:wrap;
+  gap:2rem;
+}
+
+.texto-endereco{
+  font-size: 1.3rem;
+  line-height: 1.8; /*Aumentao o espaçamento entre as linhas*/
+  flex-grow: 1; /* Permite que o texto cresça se houver espaço*/
+}
+
+.mapa{
+  width:300px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 15px rgba(0,0,0,3); */
+  box-shadow: 20px 20px 10px rgba(255,0,0,1);
+}
+
+.footer{
+  background-color: var(--cor-primaria);
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 4rem;;
+  font-size: 1.2rem;
+}
+
+
+
+
 /*---------------------*/
-/*Responsividade (Tamanho de telad diferentes)*/
+/*Responsividade (Tamanho de telas diferentes)*/
 /*Regra para quando a tela for menor que 768px */
 @media (max-width:768px) {
   .nav-header{
@@ -110,6 +274,14 @@ address{
   }
   .menu{
     padding-top: 0;
+  }
+  .conteudo-sobre, .conteudo-endereco {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .imagem-sobre, .texto-sobre{
+    width:100%
   }
 
 
@@ -141,5 +313,14 @@ address{
     
   }
 
+/* Reduz o tamanho das fontes para melhor legibilidade */
+.conteudo-banner h1{font-size: 3.5rem;}
+.subtitulo{font-size: 1.5rem;}
+.titulo-secao{font-size: 2.5rem;}
+.texto-sobre h3{font-size: 2rem;}
+.texto-sobre p {font-size: 1.1rem;}
+.card h3 {font-size: 1.5rem;}
+.card p {font-size: 1.3rem;}
+.texto-endereco {font-size: 1.1rem;}
 }
 
